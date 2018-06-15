@@ -28,7 +28,7 @@
 /**
  * This class generates form components for processing Event Web Tracking
  */
-class CRM_WebTracking_Form_Event extends CRM_Event_Form_ManageEvent {
+class CRM_Webtracking_Form_Event extends CRM_Event_Form_ManageEvent {
 
   /**
    * Set variables up before form is built.
@@ -49,7 +49,7 @@ class CRM_WebTracking_Form_Event extends CRM_Event_Form_ManageEvent {
     $params['page_id']=$this->_id;
     $params['page_category']="civicrm_event";
     $defaults = array();
-    CRM_WebTracking_BAO_WebTracking::retrieve($params, $defaults);
+    CRM_Webtracking_BAO_WebTracking::retrieve($params, $defaults);
 
     return $defaults;
   }
@@ -97,7 +97,7 @@ class CRM_WebTracking_Form_Event extends CRM_Event_Form_ManageEvent {
     // Text field to input the experiment key
     $this->add('text', 'experiment_id', ts('Experiment key'));
 
-    $this->addFormRule(array('CRM_WebTracking_Form_Event', 'formRule'));
+    $this->addFormRule(array('CRM_Webtracking_Form_Event', 'formRule'));
 
     parent::buildQuickForm();
   }
@@ -143,7 +143,7 @@ class CRM_WebTracking_Form_Event extends CRM_Event_Form_ManageEvent {
     $existParams['page_category'] = "civicrm_event";
     $existingEnrty = array();
     
-    CRM_WebTracking_BAO_WebTracking::retrieve($existParams, $existingEnrty);
+    CRM_Webtracking_BAO_WebTracking::retrieve($existParams, $existingEnrty);
 
     // Setting up the params array with the values obtained from the form 
     if (!empty($existingEnrty)) {
@@ -168,7 +168,7 @@ class CRM_WebTracking_Form_Event extends CRM_Event_Form_ManageEvent {
     $params['experiment_id'] = CRM_Utils_Array::value('experiment_id', $params, NULL);
 
     // Updating the database with the new entry
-    $event = CRM_WebTracking_BAO_WebTracking::add($params);
+    $event = CRM_Webtracking_BAO_WebTracking::add($params);
     parent::endPostProcess();
   }
 

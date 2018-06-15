@@ -1,6 +1,6 @@
 <?php
 
-class CRM_WebTracking_Form_Report extends CRM_Core_Form {
+class CRM_Webtracking_Form_Report extends CRM_Core_Form {
 
   /**
    * Set variables up before form is built.
@@ -50,7 +50,7 @@ class CRM_WebTracking_Form_Report extends CRM_Core_Form {
     // Text field to input the client ID
     $this->add('text', 'web_tracking_report_id', ts('Client ID'));
 
-    $this->addFormRule(array('CRM_WebTracking_Form_Report', 'formRule'));
+    $this->addFormRule(array('CRM_Webtracking_Form_Report', 'formRule'));
 
     $buttons = array(
         array(

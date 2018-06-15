@@ -22,6 +22,6 @@
   </compatibility>
   <comments>For support please contact me on my email (vishalagarwal3010@gmail.com)</comments>
   <civix>
-    <namespace>CRM/WebTracking</namespace>
+    <namespace>CRM/Webtracking</namespace>
   </civix>
 </extension>
