@@ -5,7 +5,7 @@
 /**
  * Base class which provides helpers to execute upgrade logic
  */
-class CRM_WebTracking_Upgrader_Base {
+class CRM_Webtracking_Upgrader_Base {
 
   /**
    * @var varies, subclass of ttis
@@ -38,7 +38,7 @@ class CRM_WebTracking_Upgrader_Base {
   static public function instance() {
     if (! self::$instance) {
       // FIXME auto-generate
-      self::$instance = new CRM_WebTracking_Upgrader(
+      self::$instance = new CRM_Webtracking_Upgrader(
         'org.civicrm.webtracking',
         realpath(__DIR__ .'/../../../')
       );

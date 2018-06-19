@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1" ?>
 
 <table>
-  <base>CRM/WebTracking</base>
-  <class>WebTracking</class>
+  <base>CRM/Webtracking</base>
+  <class>Webtracking</class>
   <name>civicrm_webtracking</name>
   <comment>This table will hold web tracking parameters for event and contribution pages</comment>
   <add>4.6</add>

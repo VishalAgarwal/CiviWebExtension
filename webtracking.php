@@ -132,7 +132,7 @@ function webtracking_civicrm_tabset($tabsetName, &$tabs, $context) {
     if (!empty($context)) {
       $eventID = $context['event_id'];
       $trackingParams = array('page_id' => $eventID, 'page_category' => "civicrm_event");
-      CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+      CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
 
       $url = CRM_Utils_System::url( 'civicrm/event/manage/webtracking',
         "reset=1&snippet=5&force=1&id=$eventID&action=update&component=event" );
@@ -160,7 +160,7 @@ function webtracking_civicrm_tabset($tabsetName, &$tabs, $context) {
     if (!empty($context)) {
       $eventID = $context['event_id'];
       $trackingParams = array('page_id' => $eventID, 'page_category' => "civicrm_event");
-      CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+      CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
       $tabs[$eventID]['enable_tracking'] = $trackingValues['enable_tracking'];
     }
   }
@@ -168,7 +168,7 @@ function webtracking_civicrm_tabset($tabsetName, &$tabs, $context) {
     if (!empty($context)) {
       $contribPageId = $context['contrib_page_id'];
       $trackingParams = array('page_id' => $contribPageId, 'page_category' => "civicrm_contribution");
-      CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+      CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
 
       $url = CRM_Utils_System::url( 'civicrm/admin/contribute/webtracking',
         "reset=1&snippet=5&force=1&id=$contribPageId&action=update&component=contribute" );
@@ -196,7 +196,7 @@ function webtracking_civicrm_tabset($tabsetName, &$tabs, $context) {
     if (!empty($context)) {
       $contribPageId = $context['contrib_page_id'];
       $trackingParams = array('page_id' => $contribPageId, 'page_category' => "civicrm_contribution");
-      CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+      CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
       $tabs[$contribPageId]['enable_tracking'] = $trackingValues['enable_tracking'];
     }
   }
@@ -210,7 +210,7 @@ function webtracking_civicrm_pageRun(&$page) {
   $pageName = $page->getVar('_name');
   if ($pageName == 'CRM_Event_Page_EventInfo') {   
     $trackingParams = array('page_id' => $page->getVar('_id'), 'page_category' => "civicrm_event");
-    CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+    CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
 
     if ($trackingValues['enable_tracking'] == 1) {
       // General script for web tracking
@@ -271,7 +271,7 @@ function webtracking_civicrm_buildForm($formName, &$form) {
   if ($category == 'Event') {
     $trackingParams = array('page_id' => $form->_eventId, 'page_category' => "civicrm_event");
 
-    CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+    CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
 
     if ($trackingValues['enable_tracking'] == 1) {
       // General script for web tracking
@@ -315,7 +315,7 @@ function webtracking_civicrm_buildForm($formName, &$form) {
   }
   else if ($category == 'Contribution') {
     $trackingParams = array('page_id' => $form->_id, 'page_category' => "civicrm_contribution");
-    CRM_WebTracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
+    CRM_Webtracking_BAO_WebTracking::retrieve($trackingParams,$trackingValues);
 
     if ($trackingValues['enable_tracking'] == 1) {
 
